@@ -85,8 +85,19 @@ clipboard-lite/
 
 - [架构说明](docs/ARCHITECTURE.md)
 - [Pro 插件 API](docs/PLUGIN_API.md)
+- [Pro 版本与商业授权](docs/PRO.md)
 - [Windows 构建说明](docs/BUILDING_WINDOWS.md)
 - [项目计划](docs/PROJECT_PLAN.md)
+
+## Pro 版本
+
+Clipboard Lite Core 是免费开源版本。Pro 版本将通过单独分发的闭源插件提供高级本地功能，例如加密存储、快捷短语模板、数据导入导出和纯文本粘贴等。
+
+如需 Pro 版本、商业授权或早期测试资格，请联系：
+
+```text
+16692909781@163.com
+```
 
 ## 许可证
 
