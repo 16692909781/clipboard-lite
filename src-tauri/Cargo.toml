@@ -1,0 +1,48 @@
+[package]
+name = "clipboard-lite"
+version = "0.1.0"
+description = "Lightweight local clipboard history manager"
+authors = ["Clipboard Lite"]
+edition = "2021"
+
+[lib]
+name = "clipboard_lite_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-autostart = "2"
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-sql = { version = "2", features = ["sqlite"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+thiserror = "2"
+libloading = "0.8"
+log = "0.4"
+env_logger = "0.11"
+rusqlite = { version = "0.32", features = ["bundled"] }
+arboard = "3.6"
+base64 = "0.22"
+aes-gcm = "0.10"
+hmac = "0.12"
+hex = "0.4"
+
+[target.'cfg(windows)'.dependencies]
+clipboard-win = { version = "5.4", features = ["std"] }
+windows = { version = "0.58", features = [
+  "Win32_Foundation",
+  "Win32_UI_Input_KeyboardAndMouse",
+  "Win32_UI_WindowsAndMessaging"
+] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
